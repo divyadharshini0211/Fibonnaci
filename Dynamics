@@ -1,0 +1,43 @@
+package task;
+
+import java.util.Scanner;
+
+public class Dynamics {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+       
+        System.out.print("Enter number of Solo Trail trips (x): ");
+        int x = sc.nextInt();
+
+        System.out.print("Enter number of Roundabout Ride trips (y): ");
+        int y = sc.nextInt();
+
+        System.out.print("Enter cost of Solo Trail pass (s): ");
+        double s = sc.nextDouble();
+
+        System.out.print("Enter cost of Roundabout Ride pass (r): ");
+        double r = sc.nextDouble();
+
+        System.out.print("Enter cost of Monthly Pass (l): ");
+        double l = sc.nextDouble();
+
+       
+        if (s > r && 2 * s < r) {
+            System.out.println("Invalid Input");
+        } else {
+            
+            double soloRoundCost = (x * s) + (y * r);
+
+           
+            if (l < soloRoundCost) {
+                System.out.println("Monthly Pass");
+            } else {
+                System.out.println("Solo Trail + Roundabout Ride");
+            }
+        }
+
+        sc.close();
+    }
+}
