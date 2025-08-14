@@ -1,0 +1,32 @@
+package task;
+
+import java.util.Scanner;
+
+public class Vibrant {
+
+    public static boolean isAlmostLucky(int number) {
+        while (number > 0) {
+            int digit = number % 10;
+            if (digit != 4 && digit != 7) {
+                return false;
+            }
+            number /= 10;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter roll number: ");
+        int rollNumber = sc.nextInt();  
+
+        if (isAlmostLucky(rollNumber)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+
+        sc.close();
+    }
+}
